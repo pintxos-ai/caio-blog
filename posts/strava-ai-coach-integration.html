@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>客戶案例：如何把 Strava、比賽行事曆與 AI 教練，三合一？ - CAIO 部落格</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.8; color: #333; }
+        h1 { color: #1a1a1a; border-bottom: 3px solid #0066cc; padding-bottom: 15px; }
+        h2 { color: #2c3e50; margin-top: 30px; }
+        p { margin: 15px 0; }
+        .back { display: inline-block; margin-bottom: 20px; color: #0066cc; text-decoration: none; }
+        .back:hover { text-decoration: underline; }
+        hr { border: none; border-top: 1px solid #ddd; margin: 30px 0; }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back">← 返回首頁</a>
+    <h1>客戶案例：如何把 Strava、比賽行事曆與 AI 教練，三合一？</h1>
+<p>運動員最常遇到的問題不是「練不夠」，而是「沒有人幫我整合」。</p>
+<p>你有 Strava 記錄訓練數據，
+賽季行事曆寫著接下來的比賽，
+網路上有一堆運動教練的建議，
+但這三件事散落在不同地方，沒人幫你串起來。</p>
+<p>這個案例，就是一個真實的整合過程。</p>
+<h2>先搞清楚：要整合的是三件事</h2>
+<p>多數運動員的日常是這樣的：</p>
+<ul>
+<li><strong>Strava</strong> 裡有一堆騎車、跑步的軌跡資料，但看完就結束，沒有後續行動</li>
+<li><strong>行事曆</strong> 裡有比賽日期，但教練課表和比賽日之間沒有邏輯連結</li>
+<li><strong>網路教練內容</strong>（YouTube、部落格、健身 APP）給的都是通用建議，沒有根據你今天的疲勞度調整</li>
+</ul>
+<p>問題不是缺工具，是工具之間沒有對話。</p>
+<h2>第一步：讓 Strava 變成「教練的情報員」</h2>
+<p>Strava 的價值不只是「記錄你騎了多遠」，而是它累積的<strong>長期資料庫</strong>。</p>
+<p>但多數人打開 Strava 只做一件事：按「完成」。</p>
+<p>我們做的第一件事，是把 Strava 的 API 串到一個 AI 教練系統裡。具體來說：</p>
+<ul>
+<li>每晚 22:00，系統自動抓當天的訓練資料（騎車距離、跑步距離、總時數）</li>
+<li>AI 教練根據當天的訓練量，自動判斷：「這個人今天練很多，明天應該要恢復」</li>
+<li>恢復建議直接寫入行事曆，時間固定 19:30，鬧鐘響的時候你不需要再想「明天要練什麼」</li>
+</ul>
+<p><strong>關鍵轉變：從「看數據」變成「數據自己說話、系統自動行動」。</strong></p>
+<h2>第二步：行事曆不只是記事本，是「作戰指揮中心」</h2>
+<p>多數人把行事曆當記事本用：寫下比賽日期，然後就放著了。</p>
+<p>真正的用法是<strong>倒推法</strong>：</p>
+<pre><code>比賽日：2026-04-19（規格等同於半天）
+→ 賽前減量週：04/13 - 04/18
+→ 關鍵訓練週：04/06 - 04/12
+→ 基礎建設期：03/23 - 04/05
+</code></pre>
+<p>每個區塊的訓練目標不同，AI 教練可以根據行事曆自動調整每天的訓練建議。</p>
+<p>我們的系統現在能做到這件事：</p>
+<ul>
+<li>行事曆上的比賽日，系統認得出來（關鍵字：「比賽」「全馬」「半馬」「Challenge」）</li>
+<li>賽前三週自動切入「減量模式」，不讓你在比賽前把自己練爆</li>
+<li>比賽日當天不出訓練，只有「建議」</li>
+</ul>
+<h2>第三步：教練建議不是死的，是會長大的</h2>
+<p>傳統的教練建議，給完就結束。</p>
+<p>AI 教練的價值在於<strong>每次訓練後都有回饋</strong>：</p>
+<ul>
+<li>今天騎了 80 公里，超出平時平均值 30%，AI 教練在行事曆寫下「明天輕鬆騎 30 分鐘，不追速度」</li>
+<li>上週跑了兩次 15 公里，這週的平均疲勞指數偏高，教練建議減少跑步頻率、加入核心訓練</li>
+</ul>
+<p><strong>每次行動後，系統都會記得，下一個建議會更好。</strong></p>
+<h2>整合的實際產出長這樣</h2>
+<p>每天晚上 22:00，系統自動輸出：</p>
+<pre><code>📅 明日訓練：2026-03-26
+🏋️ 項目：節奏跑 — 40 分鐘
+⏰ 時間：19:30
+💡 教練建議：今天騎車 65km，疲勞度偏高，
+   明天改為輕鬆跑，目標是恢復而非突破。
+</code></pre>
+<p>然後這段文字，不只出現在 Telegram 訊息裡——它<strong>同時寫入行事曆</strong>，有鬧鐘提醒。</p>
+<p>你不需要打開任何一個 APP，該練什麼、幾點練，系統已經幫你想好了。</p>
+<h2>技術層面：三個模組怎麼串在一起？</h2>
+<p>簡單說：</p>
+<ul>
+<li><strong>Strava API</strong>：每晚自動抓最新的運動資料，用 refresh token 機制自動續約，不需要手動更新</li>
+<li><strong>行事曆 API（iCloud/Apple Calendar）</strong>：用 AppleScript 寫入訓練計畫，並在寫入前自動刪除明日既有的訓練欄位（避免重複）</li>
+<li><strong>AI 教練引擎</strong>：一個寫入 Cron Job 的 agent prompt，每次執行時根據三個輸入源（今日訓練量、明日行事曆、當週疲勞度）動態生成建議</li>
+</ul>
+<p>三個模組各自運作，但共享同一個資訊基底——這就是整合的關鍵。</p>
+<h2>結論：工具不缺，缺的是把工具串起來的人</h2>
+<p>多數人買了運動手錶，覺得這樣就「有在管理健康」了。</p>
+<p>但真正發揮價值的，是那些<strong>把數據變成行動、把行動寫進行事曆、把行事曆的節奏對齊長期目標</strong>的人。</p>
+<p>AI 不是來取代教練的，是來把教練本來就該做、但多數人負擔不起的那些「每天追蹤、每天調整」的工作，自動化掉。</p>
+<p>讓教練的精力留給真正需要人類判斷的事：技術動作、受傷復原、心理建設。</p>
+<p>剩下的，交給系統。</p>
+<hr />
+<p><strong>準備好建立你自己的 AI 運動教練了嗎？</strong></p>
+<p>CAIO 提供個人化的 AI 教練建置服務，從 Strava 串接、行事曆整合到每日訓練建議，幫你把現有的訓練工具升級成真正的智慧系統。</p>
+<hr />
+<p><em>協助客戶建立人類 + AI 的混合管理系統</em></p>
+</body>
+</html>
