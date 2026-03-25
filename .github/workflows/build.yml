@@ -31,11 +31,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to gh-pages
         run: |
           git checkout gh-pages || git checkout --orphan gh-pages
           git rm -rf .
           cp -r _deploy/* .
           git add .
-          git commit -m "Deploy $(date '+%Y-%m-%d %H:%M:%S')"
+          git commit -m "Deploy $(date)"
           git push origin gh-pages --force
